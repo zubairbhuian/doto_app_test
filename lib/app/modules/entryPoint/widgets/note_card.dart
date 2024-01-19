@@ -6,15 +6,16 @@ import 'package:get/get.dart';
 
 class NoteCard extends StatelessWidget {
   final String title, note, date;
+  final Function()? onTap;
   const NoteCard(
-      {super.key, required this.title, required this.note, required this.date});
+      {super.key, required this.title, required this.note, required this.date, this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
       child: AppCard(
-          onTap: () {},
+          onTap: onTap,
           color: kDisabledColor.withOpacity(.3),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

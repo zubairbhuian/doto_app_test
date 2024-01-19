@@ -1,12 +1,8 @@
-import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import '../core/utils/int_extensions.dart';
 import '../core/config/color.dart';
 import '../core/config/style.dart';
-import '../core/utils/icons.dart';
-import 'popup_dialogs.dart';
-
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? title;
@@ -40,42 +36,28 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Container(
         padding: const EdgeInsets.symmetric(vertical: 10),
         decoration: BoxDecoration(
-            color: const Color(
-                0xffF2F8FD), // Adjust the background color of the AppBar
+            color: kPrimaryColor, // Adjust the background color of the AppBar
             boxShadow: isShadow ? [kAppbarShadow] : []),
         child: AppBar(
           automaticallyImplyLeading: false,
           titleSpacing: 0,
           elevation: 0,
           centerTitle: centerTitle,
-          leadingWidth: 80,
-          backgroundColor: const Color(0xffF2F8FD),
+          leadingWidth: 60,
+          backgroundColor: kPrimaryColor,
           foregroundColor: kTextColor,
-          titleTextStyle: kTitleLarge.copyWith(color: const Color(0xff2F2F2F)),
+          titleTextStyle: kTitleLarge.copyWith(color: kWhite),
           // appbar leading
-          leading: Center(
-            child: CircleAvatar(
-              radius: 24,
-              backgroundColor: kWhite,
-              child: SvgPicture.asset(IconsPath.userFilled),
-            ),
-          ),
+          leading: IconButton(
+              onPressed: () {
+                Get.back();
+              },
+              icon: const Icon(
+                Icons.arrow_back_ios_new,
+                color: kWhite,
+              )),
           // appbar title
           title: title,
-          // appbar actions),
-          actions: [
-            GestureDetector(
-              onTap: () {
-                PopupDialog.logOutDialog();
-              },
-              child: CircleAvatar(
-                radius: 24,
-                backgroundColor: kWhite,
-                child: SvgPicture.asset(IconsPath.logout),
-              ),
-            ),
-            20.width,
-          ],
         ));
   }
 }

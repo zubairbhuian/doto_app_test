@@ -1,3 +1,4 @@
+import 'package:doto_app_test/app/core/config/color.dart';
 import 'package:doto_app_test/app/core/utils/int_extensions.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,10 @@ class WelcomeView extends GetView<WelcomeController> {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       decoration: const BoxDecoration(
           image: DecorationImage(
+               colorFilter: ColorFilter.mode(
+            kPrimaryColor, // Change this color to the desired color
+              BlendMode.overlay,
+            ),
               fit: BoxFit.cover,
               image: AssetImage('assets/images/welcome_bg.png'))),
       child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [

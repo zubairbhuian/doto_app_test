@@ -19,7 +19,7 @@ class Buttons {
         color: kRed,
         fontFamily: Fonts.primary,
         fontSize: 16.sp,
-        fontWeight: FontWeight.w500),
+        fontWeight: FontWeight.w600),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(12), // Change the border radius value
     ),

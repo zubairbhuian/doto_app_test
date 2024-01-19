@@ -21,7 +21,7 @@ class AppPages {
       name: _Paths.WELCOME,
       page: () => const WelcomeView(),
       binding: WelcomeBinding(),
-      middlewares: [RouteWlcomMiddleware()]
+      // middlewares: [RouteWlcomMiddleware()]
     ),
     GetPage(
       name: _Paths.ENTRY_POINT,
